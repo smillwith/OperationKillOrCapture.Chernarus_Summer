@@ -8,22 +8,22 @@ class EditorData
 	toggles=5;
 	class ItemIDProvider
 	{
-		nextID=1835;
+		nextID=1857;
 	};
 	class MarkerIDProvider
 	{
-		nextID=29;
+		nextID=34;
 	};
 	class LayerIndexProvider
 	{
-		nextID=59;
+		nextID=71;
 	};
 	class Camera
 	{
-		pos[]={9019.5449,249.7278,14458.341};
-		dir[]={-0.41261715,-0.33373103,0.84757376};
-		up[]={-0.1460851,0.94266182,0.30007929};
-		aside[]={0.89912242,-1.5436672e-007,0.43771151};
+		pos[]={4655.3613,368.66495,13821.873};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -85,7 +85,8 @@ addons[]=
 	"A3_Structures_F_Wrecks",
 	"A3_Modules_F_GroupModifiers",
 	"A3_Modules_F_Intel",
-	"A3_Structures_F_Items_Cans"
+	"A3_Structures_F_Items_Cans",
+	"A3_Structures_F_Research"
 };
 randomSeed=10104080;
 class ScenarioData
@@ -112,25 +113,6 @@ class CustomAttributes
 	{
 		name="Multiplayer";
 		class Attribute0
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=1;
-				};
-			};
-		};
-		class Attribute1
 		{
 			property="RespawnTemplates";
 			expression="true";
@@ -177,6 +159,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
 				};
 			};
 		};
@@ -232,7 +233,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=919;
+		items=931;
 		class Item0
 		{
 			dataType="Layer";
@@ -6469,6 +6470,7 @@ class Mission
 			dataType="Marker";
 			position[]={5316.2632,355.46207,13543.924};
 			name="marker_18";
+			text=" Research Site";
 			type="mil_unknown";
 			id=873;
 		};
@@ -6496,7 +6498,7 @@ class Mission
 			dataType="Marker";
 			position[]={9034.75,249.39185,14479.125};
 			name="marker_21";
-			text=" Old Hunting Shack";
+			text=" Small Shack";
 			type="mil_unknown";
 			id=876;
 		};
@@ -6529,7 +6531,7 @@ class Mission
 			dataType="Marker";
 			position[]={6279.375,322.50317,14306.75};
 			name="marker_26";
-			text=" Old Shrine Ruins";
+			text="Church Ruins";
 			type="mil_unknown";
 			id=881;
 		};
@@ -13994,9 +13996,10 @@ class Mission
 		class Item715
 		{
 			dataType="Trigger";
-			position[]={4962.4111,181.20186,12575.711};
+			position[]={4962.375,181.0703,12577.875};
 			class Attributes
 			{
+				text="OnLoad";
 				condition="true";
 				onActivation="civ1 action [""SwitchWeapon"", civ1, civ1, 100]; player0 action [""SwitchWeapon"", player0, player0, 100]; player1 action [""SwitchWeapon"", player1, player1, 100]; player2 action [""SwitchWeapon"", player2, player2, 100]; player3 action [""SwitchWeapon"", player3, player3, 100];";
 				sizeA=0;
@@ -16749,8 +16752,8 @@ class Mission
 		class Item881
 		{
 			dataType="Marker";
-			position[]={6198.2305,285.5098,13148.84};
-			name="marker_28";
+			position[]={6199,285.508,13148.375};
+			name="mOldHuntingShack";
 			text=" Old Hunting Shack";
 			type="mil_unknown";
 			id=1743;
@@ -16937,7 +16940,7 @@ class Mission
 		class Item894
 		{
 			dataType="Trigger";
-			position[]={6214.75,280.93921,13164.25};
+			position[]={6184.125,285.10852,13166.625};
 			class Attributes
 			{
 				text="Night sound";
@@ -16952,116 +16955,6 @@ class Mission
 			type="EmptyDetector";
 		};
 		class Item895
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={4962.875,181.52843,12570.75};
-				angles[]={0.068818331,0,0.0093375118};
-			};
-			id=1762;
-			type="ModuleCreateDiaryRecord_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleCreateDiaryRecord_F_PresetTitle";
-					expression="_this setVariable ['PresetTitle',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Situation";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleCreateDiaryRecord_F_Title";
-					expression="_this setVariable ['Title',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleCreateDiaryRecord_F_Description";
-					expression="_this setVariable ['Description',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="You are a member of the elite Bigfoot Field Researchers Organization (BFRO). You mission is to investigate reports of a mysterious creature in the area.";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleCreateDiaryRecord_F_Owner";
-					expression="_this setVariable ['Owner',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ModuleCreateDiaryRecord_F_Subject";
-					expression="_this setVariable ['Subject',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Help";
-						};
-					};
-				};
-				nAttributes=5;
-			};
-		};
-		class Item896
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -17106,7 +16999,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Journal Entry 1";
+							value="Journal Entry 2";
 						};
 					};
 				};
@@ -17125,7 +17018,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="This is my journal entry 1.";
+							value="This is my journal entry 2.";
 						};
 					};
 				};
@@ -17170,13 +17063,13 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item897
+		class Item896
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4952.75,181.88133,12561};
-				angles[]={0.015998369,0,0.0026520467};
+				position[]={4952.75,181.88135,12561};
+				angles[]={0.016004669,0,0.0026529003};
 			};
 			id=1765;
 			type="ModuleCreateDiaryRecord_F";
@@ -17280,7 +17173,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item898
+		class Item897
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -17428,7 +17321,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item899
+		class Item898
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -17576,13 +17469,13 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item900
+		class Item899
 		{
 			dataType="Layer";
 			name="Layer 57";
 			id=1772;
 		};
-		class Item901
+		class Item900
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -17730,7 +17623,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item902
+		class Item901
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -17878,7 +17771,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item903
+		class Item902
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -18026,13 +17919,13 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item904
+		class Item903
 		{
 			dataType="Layer";
 			name="Old Hunting Shack";
 			id=1798;
 		};
-		class Item905
+		class Item904
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18047,7 +17940,7 @@ class Mission
 			id=1819;
 			type="Land_Axe_F";
 		};
-		class Item906
+		class Item905
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18062,7 +17955,7 @@ class Mission
 			id=1820;
 			type="CUP_A2_misc_burnspruce_pmc";
 		};
-		class Item907
+		class Item906
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18077,7 +17970,7 @@ class Mission
 			id=1821;
 			type="CUP_A2_misc_burnspruce_pmc";
 		};
-		class Item908
+		class Item907
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18092,7 +17985,7 @@ class Mission
 			id=1822;
 			type="Land_Campfire_F";
 		};
-		class Item909
+		class Item908
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18107,7 +18000,7 @@ class Mission
 			id=1823;
 			type="Land_Matches_F";
 		};
-		class Item910
+		class Item909
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18122,7 +18015,7 @@ class Mission
 			id=1824;
 			type="Land_BottlePlastic_V2_F";
 		};
-		class Item911
+		class Item910
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18137,7 +18030,7 @@ class Mission
 			id=1825;
 			type="Land_Can_Dented_F";
 		};
-		class Item912
+		class Item911
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18152,7 +18045,7 @@ class Mission
 			id=1827;
 			type="CUP_A2_misc_stub2";
 		};
-		class Item913
+		class Item912
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18167,7 +18060,7 @@ class Mission
 			id=1828;
 			type="CUP_A2_misc_fallentree2";
 		};
-		class Item914
+		class Item913
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18182,7 +18075,7 @@ class Mission
 			id=1829;
 			type="CUP_A2_misc_fallentree1";
 		};
-		class Item915
+		class Item914
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18197,7 +18090,7 @@ class Mission
 			id=1831;
 			type="CUP_A2_r_boulder_03_ep1";
 		};
-		class Item916
+		class Item915
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18212,7 +18105,7 @@ class Mission
 			id=1832;
 			type="CUP_A2_misc_stubleafs_pmc";
 		};
-		class Item917
+		class Item916
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18227,7 +18120,7 @@ class Mission
 			id=1833;
 			type="CUP_A2_misc_fallentree2";
 		};
-		class Item918
+		class Item917
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18241,16 +18134,411 @@ class Mission
 			id=1834;
 			type="CUP_A2_misc_burnspruce_pmc";
 		};
+		class Item918
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5417.625,366.02121,13286.5};
+				angles[]={0,5.7913308,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=1835;
+			type="Land_Research_house_V1_ruins_F";
+		};
+		class Item919
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5414.75,367.76028,13268};
+				angles[]={0,2.5622985,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=1836;
+			type="Land_Research_HQ_ruins_F";
+		};
+		class Item920
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5434.125,366.64621,13263};
+				angles[]={0,3.0873942,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=1842;
+			type="Land_Research_house_V1_ruins_F";
+		};
+		class Item921
+		{
+			dataType="Marker";
+			position[]={7150.625,376.06909,14895.5};
+			name="marker_29";
+			text=" Helicopter Crash Site";
+			type="mil_unknown";
+			id=1843;
+		};
+		class Item922
+		{
+			dataType="Trigger";
+			position[]={6185.5,285.0007,13151.75};
+			class Attributes
+			{
+				name="tReachedOldHuntingShack";
+				text="Reached Old Hunting Shack";
+				sizeA=10;
+				sizeB=10;
+				activationBy="WEST";
+			};
+			id=1846;
+			type="EmptyDetector";
+		};
+		class Item923
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6180.293,284.28513,13139.969};
+			};
+			id=1847;
+			type="ModuleTaskSetState_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleTaskSetState_F_State";
+					expression="_this setVariable ['State',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="SUCCEEDED";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item924
+		{
+			dataType="Marker";
+			position[]={6202.375,285.22147,13153};
+			name="mHuntingShackBase";
+			text="Hunting Shack";
+			type="Empty";
+			id=1848;
+		};
+		class Item925
+		{
+			dataType="Trigger";
+			position[]={4963,181.27126,12574.75};
+			class Attributes
+			{
+				text="Onload - Delay";
+				condition="true";
+				onActivation="[player0] call dingus_fnc_createDiary;";
+				sizeA=0;
+				sizeB=0;
+				timeout[]={3,3,3};
+			};
+			id=1851;
+			type="EmptyDetector";
+		};
+		class Item926
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5067.7461,322.4964,13450.273};
+				angles[]={6.2418733,0,0.079831354};
+			};
+			id=1852;
+			type="ModuleAnimals_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleAnimals_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Goat_random_F";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleAnimals_F_Count";
+					expression="_this setVariable ['Count',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item927
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4684.2944,264.72382,13422.069};
+				angles[]={6.2418756,0,0.079830162};
+			};
+			id=1853;
+			type="ModuleAnimals_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleAnimals_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Goat_random_F";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleAnimals_F_Count";
+					expression="_this setVariable ['Count',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=5;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item928
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5088.3501,323.35504,14329.355};
+				angles[]={6.2418733,0,0.079831354};
+			};
+			id=1854;
+			type="ModuleAnimals_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleAnimals_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Goat_random_F";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleAnimals_F_Count";
+					expression="_this setVariable ['Count',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item929
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6111.7002,327.46631,14476.205};
+				angles[]={6.2418756,0,0.079830162};
+			};
+			id=1855;
+			type="ModuleAnimals_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleAnimals_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Goat_random_F";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleAnimals_F_Count";
+					expression="_this setVariable ['Count',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=5;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item930
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6745.1099,322.15811,13974.185};
+				angles[]={6.2418733,0,0.079831354};
+			};
+			id=1856;
+			type="ModuleAnimals_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleAnimals_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Goat_random_F";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleAnimals_F_Count";
+					expression="_this setVariable ['Count',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=12;
+			nextID=13;
 		};
 		class Links
 		{
-			items=12;
+			items=13;
 			class Item0
 			{
 				linkID=0;
@@ -18294,7 +18582,7 @@ class Mission
 			class Item4
 			{
 				linkID=4;
-				item0=1762;
+				item0=1764;
 				item1=1370;
 				class CustomData
 				{
@@ -18304,7 +18592,7 @@ class Mission
 			class Item5
 			{
 				linkID=5;
-				item0=1764;
+				item0=1765;
 				item1=1370;
 				class CustomData
 				{
@@ -18314,7 +18602,7 @@ class Mission
 			class Item6
 			{
 				linkID=6;
-				item0=1765;
+				item0=1770;
 				item1=1370;
 				class CustomData
 				{
@@ -18324,7 +18612,7 @@ class Mission
 			class Item7
 			{
 				linkID=7;
-				item0=1770;
+				item0=1771;
 				item1=1370;
 				class CustomData
 				{
@@ -18334,7 +18622,7 @@ class Mission
 			class Item8
 			{
 				linkID=8;
-				item0=1771;
+				item0=1774;
 				item1=1370;
 				class CustomData
 				{
@@ -18344,7 +18632,7 @@ class Mission
 			class Item9
 			{
 				linkID=9;
-				item0=1774;
+				item0=1775;
 				item1=1370;
 				class CustomData
 				{
@@ -18354,7 +18642,7 @@ class Mission
 			class Item10
 			{
 				linkID=10;
-				item0=1775;
+				item0=1776;
 				item1=1370;
 				class CustomData
 				{
@@ -18364,8 +18652,18 @@ class Mission
 			class Item11
 			{
 				linkID=11;
-				item0=1776;
-				item1=1370;
+				item0=1847;
+				item1=1770;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item12
+			{
+				linkID=12;
+				item0=1846;
+				item1=1847;
 				class CustomData
 				{
 					type="Sync";

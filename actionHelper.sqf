@@ -5,11 +5,8 @@ addAction
 
 object addAction [title, script, arguments, priority, showWindow, hideOnUse, shortcut, condition, positionInModel, radius, radiusView, showIn3D, available, textDefault, textToolTip]
 
-this addAction ["Advance Time 1 hour", "skiptime.sqf", nill, 1.5, true, ];
-this addAction ["Enable Chemlights", "bEnableChemlights = 1"];
+Example:
 [this, "Skip Time 1 Hour", "skiptime.sqf", true] call dingus_fnc_addBasicAction;
-[this, "Chemlights On", "bEnableChemlights = 1", !bEnableChemlights] call dingus_fnc_addBasicAction;
-[this, "Chemlights Off", "bEnableChemlights = 0", bEnableChemlights] call dingus_fnc_addBasicAction;
 */
 
 dingus_fnc_addBasicAction = {
