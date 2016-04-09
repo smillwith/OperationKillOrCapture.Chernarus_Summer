@@ -1,0 +1,21 @@
+class CfgSounds
+{
+    sounds[] =
+    {
+      leaves1, beast1
+    };
+
+    class leaves1
+    {
+          name = "Footsteps in Leaves";
+          sound[] = {"\sound\leaves1.ogg", 1, 1.0};
+          titles[] = {   };
+    };
+
+    class beast1
+    {
+          name = "Beast Noise 1";
+          sound[] = {"\sound\beast1.ogg", 1, 0.75};
+          titles[] = {   };
+    };
+};

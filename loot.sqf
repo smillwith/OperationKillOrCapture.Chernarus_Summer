@@ -1,8 +1,9 @@
 dingus_fnc_FillLoot = {
   _eliteItems = ["NVGoggles_indep", "optic_TWS", "optic_Nightstalker", "Rangefinder"];
-  _rareItems = ["ItemGPS", "optic_DMS", "optic_MRD", "muzzle_snds_B", "acc_flashlight", "bipod_01_F_blk", "srifle_DMR_06_olive_F", "optic_SOS", "arifle_MXM_F", "hgun_ACPC2_F", "hgun_Pistol_heavy_01_F"];
+  _rareItems = ["ItemGPS", "optic_DMS", "optic_MRD", "muzzle_snds_B", "bipod_01_F_blk", "srifle_DMR_06_olive_F", "optic_SOS", "arifle_MXM_F", "hgun_ACPC2_F", "hgun_Pistol_heavy_01_F"];
+  _clothingItems = ["U_B_CombatUniform_mcam", "H_Cap_grn_BI", "H_MilCap_mcamo"];
   _magazines = ["30Rnd_9x21_Mag", "9Rnd_45ACP_Mag", "20Rnd_762x51_Mag", "11Rnd_45ACP_Mag", "30Rnd_65x39_caseless_mag"];
-  _commonItems = ["ItemWatch", "ItemWatch", "ItemWatch", "ItemWatch", "ItemCompass", "ItemCompass", "ItemCompass", "ItemCompass", "optic_MRD", "acc_flashlight", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "Binocular", "Chemlight_Blue", "Chemlight_Green", "Chemlight_Red"];
+  _commonItems = ["ItemWatch", "ItemWatch", "ItemWatch", "ItemWatch", "ItemCompass", "ItemCompass", "ItemCompass", "ItemCompass", "optic_MRD", "acc_flashlight", "acc_flashlight", "acc_flashlight", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "Binocular", "Chemlight_Blue", "Chemlight_Green", "Chemlight_Red"];
 
   //TODO: Add hats, vests, backpacks
 
@@ -19,7 +20,7 @@ dingus_fnc_FillLoot = {
     _type = floor random 100;
     //hint format ["type: %1", count _boxes];
 
-    //Get a random item from that list
+    //chance at elite
     if (_type > 85) then {
       
       //Elite
@@ -33,22 +34,24 @@ dingus_fnc_FillLoot = {
 
       } else {
 
-        //Magazine
-        if (_type > 30) then {
-          _x addMagazineCargo [(_magazines select floor random count _magazines), 1];
-        };
+        //??
 
       };
     };
 
+    //Magazine
+    _x addMagazineCargo [(_magazines select floor random count _magazines), 1];
+
     //always get at least 1 Common item
     _x addItemCargo [(_commonItems select floor random count _commonItems), 1];
     
+    //Sometimes you get one more
     if (_type mod 3 == 0) then {
       _x addItemCargo [(_commonItems select floor random count _commonItems), 1];  
     };
     
     //Temp for now
+    _x addItemCargo [(_clothingItems select floor random count _clothingItems), 1];
     //_x addBackpackCargo [(_backpacks select floor random count _backpacks), 1];
     //_x addItemCargo [(_eliteItems select floor random count _eliteItems), 1];
     //_x addItemCargo [(_rareItems select floor random count _rareItems), 1];
