@@ -71,7 +71,7 @@ dingus_fnc_interview5 = {
 //---------------------------
 //Guide
 dingus_fnc_interview6 = {
-  guide globalChat "I'm going to set up base camp. Follow me if you'd like. Otherwise I'll meet you there.";
+  guide globalChat "I'm going to set up base camp. Follow me if you'd like. Otherwise, head through the forest entrance and I'll meet you there.";
   missionNamespace setVariable ["interview6", true];
   ["markerBaseCamp"] call dingus_fnc_ShowMarker;  // ---- fix this we need a different marker
   hint "Your map has been updated."
@@ -95,20 +95,32 @@ dingus_fnc_interview7 = {
 //---------------------------
 
 /*
-Not sure why these conditions aren't working*/
-       civ0 addAction ["Interview", "[] call dingus_fnc_interview1", [], 1.5, true, true, "", "missionNamespace getVariable [""interview1"", false] == true"];
-       civ1 addAction ["Interview", "[] call dingus_fnc_interview2", [], 1.5, true, true, "", "missionNamespace getVariable [""interview2"", false] == true"];
-       civ2 addAction ["Interview", "[] call dingus_fnc_interview3", [], 1.5, true, true, "", "missionNamespace getVariable [""interview3"", false] == true"];
-       civ3 addAction ["Interview", "[] call dingus_fnc_interview4", [], 1.5, true, true, "", "missionNamespace getVariable [""interview4"", false] == true"];
-journalist1 addAction ["Interview", "[] call dingus_fnc_interview5", [], 1.5, true, true, "", "missionNamespace getVariable [""interview5"", false] == true"];
-      guide addAction ["Interview", "[] call dingus_fnc_interview6", [], 1.5, true, true, "", "missionNamespace getVariable [""interview6"", false] == true"];
-    hunter1 addAction ["Interview", "[] call dingus_fnc_interview7", [], 1.5, true, true, "", "missionNamespace getVariable [""interview7"", false] == true"];
-/**/
+Not sure why these conditions aren't working
+       civ0 addAction ["Interview", "[] call dingus_fnc_interview1", [], 1.5, true, true, "", "missionNamespace getVariable ['interview1', false]"];
+       civ1 addAction ["Interview", "[] call dingus_fnc_interview2", [], 1.5, true, true, "", "missionNamespace getVariable ['interview2', false]"];
+       civ2 addAction ["Interview", "[] call dingus_fnc_interview3", [], 1.5, true, true, "", "missionNamespace getVariable ['interview3', false]"];
+       civ3 addAction ["Interview", "[] call dingus_fnc_interview4", [], 1.5, true, true, "", "missionNamespace getVariable ['interview4', false]"];
+journalist1 addAction ["Interview", "[] call dingus_fnc_interview5", [], 1.5, true, true, "", "missionNamespace getVariable ['interview5', false]"];
+      guide addAction ["Interview", "[] call dingus_fnc_interview6", [], 1.5, true, true, "", "missionNamespace getVariable ['interview6', false]"];
+    hunter1 addAction ["Interview", "[] call dingus_fnc_interview7", [], 1.5, true, true, "", "missionNamespace getVariable ['interview7', false]"];
+*/
 
-  /*     civ0 addAction ["Interview", "[] call dingus_fnc_interview1", [], 1.5, true, true, "", "true"];
+       civ0 addAction ["Interview", "[] call dingus_fnc_interview1", [], 1.5, true, true, "", "true"];
        civ1 addAction ["Interview", "[] call dingus_fnc_interview2", [], 1.5, true, true, "", "true"];
        civ2 addAction ["Interview", "[] call dingus_fnc_interview3", [], 1.5, true, true, "", "true"];
        civ3 addAction ["Interview", "[] call dingus_fnc_interview4", [], 1.5, true, true, "", "true"];
 journalist1 addAction ["Interview", "[] call dingus_fnc_interview5", [], 1.5, true, true, "", "true"];
       guide addAction ["Interview", "[] call dingus_fnc_interview6", [], 1.5, true, true, "", "true"];
-    hunter1 addAction ["Interview", "[] call dingus_fnc_interview7", [], 1.5, true, true, "", "true"];*/
+    hunter1 addAction ["Interview", "[] call dingus_fnc_interview7", [], 1.5, true, true, "", "true"];
+
+
+//Action for setting up camp
+
+//Action: "Set up Camp"
+/**/
+player0 addAction ["Set up Camp", {
+  missionNamespace setVariable ["campready", true];
+  skipTime 0.75;
+}, [], 1.5, false, true, "", ""];
+/**/
+//Condition: triggerActivated tArrivedAtCamp

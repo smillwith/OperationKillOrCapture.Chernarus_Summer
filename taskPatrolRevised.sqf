@@ -33,15 +33,15 @@ if ((typeName _maxDist) != (typeName 0)) exitWith {debugLog "Log: [taskPatrol] M
 if ((typeName _blacklist) != (typeName [])) exitWith {debugLog "Log: [taskPatrol] Blacklist (3) must be an Array!"; false};
 
 //Dingus
-_grp setBehaviour "CARELESS";
+_grp setBehaviour "SAFE";
 
 //Create a string of randomly placed waypoints.
 private ["_prevPos"];
 _prevPos = _pos;
-for "_i" from 0 to (2 + (floor (random 30))) do
+for "_i" from 0 to (2 + (floor (random 300))) do
 {
   private ["_wp", "_newPos"];
-  _newPos = [_prevPos, 50, _maxDist, 1, 0, 60 * (pi / 180), 0, _blacklist] call BIS_fnc_findSafePos;
+  _newPos = [_prevPos, 50, _maxDist, 1, 0, 60 * (pi / 180), 0, _blacklist] execVM "findSafePosRevised.sqf";
   _prevPos = _newPos;
 
   _wp = _grp addWaypoint [_newPos, 0];
