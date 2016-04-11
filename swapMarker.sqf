@@ -1,14 +1,9 @@
+//["mHuntingShack"] call dingus_fnc_SwapMarker;
 dingus_fnc_SwapMarker = {
   params ["_markerName"];
 
-  //Get Color
-  //_color = getMarkerColor _markerName;
-  _color = "Green";
-
-  //Get text
-  _text = getMarkerText _markerName;
-  
-  //Get pos
+  _color = "ColorGreen";
+  _text = markerText _markerName;
   _pos = getMarkerPos _markerName;
 
   //Create new
@@ -19,5 +14,10 @@ dingus_fnc_SwapMarker = {
 
   //Delete old
   deleteMarker _markerName;
-  
+
+  _marker;
 };
+
+//["mHuntingShack"] call dingus_fnc_ShowMarker;
+//["mHuntingShack_start"] call dingus_fnc_SwapMarker;
+

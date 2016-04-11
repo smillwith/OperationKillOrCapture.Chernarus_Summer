@@ -1,6 +1,9 @@
 execVM "loot.sqf";
 execVM "actionHelper.sqf";
 
+execVM "showMarker.sqf";
+execVM "swapMarker.sqf";
+
 //We actually want to do this later...after their initial weapon has been put away
 //player0 execVM "EnableWeaponHolstering.sqf";
 //player1 execVM "EnableWeaponHolstering.sqf";
@@ -8,6 +11,8 @@ execVM "actionHelper.sqf";
 //Create diary records
 execVM "diary.sqf";
 
+//Initialize the Dialogue
+execVM "questDialogue.sqf";
 
 //Sit Init
 MAC_fnc_switchMove = {
@@ -18,3 +23,4 @@ MAC_fnc_switchMove = {
   _object switchMove _anim;
     
 };
+
