@@ -19,14 +19,32 @@ execVM "questDialogue.sqf";
 execVM "endGame.sqf";
 
 //Defaults?
-missionNamespace setVariable ["interview1", false];
-missionNamespace setVariable ["interview2", false];
-missionNamespace setVariable ["interview3", false];
-missionNamespace setVariable ["interview4", false];
-missionNamespace setVariable ["interview5", false];
-missionNamespace setVariable ["interview6", false];
-missionNamespace setVariable ["interview7", false];
-missionNamespace setVariable ["campready", false];
+missionNamespace setVariable ["interview1", '0'];
+missionNamespace setVariable ["interview2", '0'];
+missionNamespace setVariable ["interview3", '0'];
+missionNamespace setVariable ["interview4", '0'];
+missionNamespace setVariable ["interview5", '0'];
+missionNamespace setVariable ["interview6", '0'];
+missionNamespace setVariable ["interview7", '0'];
+missionNamespace setVariable ["campEmpty", '1'];
+missionNamespace setVariable ["arrivedAtCamp", '0'];
+missionNamespace setVariable ["campready", '0'];
+
+
+
+//Other Quest-related stuff
+
+//Action: "Set up Camp"
+player0 addAction ["Set up Camp", {
+  missionNamespace setVariable ["campready", '1'];
+  skipTime 0.75;
+}, [], 1.5, false, true, "", "triggerActivated tArrivedAtCamp && (missionNamespace getVariable ['campready', '0'] == '0')"];
+
+
+//Action: Medic!!
+medic1 addAction ["Heal me please.", {
+  _this select 0 action ["HealSoldier", _this select 1];
+}, [], 1.5, false, true, "", "damage _this > 0.0"];
 
 
 //Sit Init
