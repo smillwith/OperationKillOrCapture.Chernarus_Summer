@@ -2,14 +2,7 @@ class CfgSounds
 {
     sounds[] =
     {
-      leaves1, beast1
-    };
-
-    class leaves1
-    {
-          name = "Footsteps in Leaves";
-          sound[] = {"\sound\leaves1.ogg", 1, 1.0};
-          titles[] = {   };
+      beast1, twig1, crickets1
     };
 
     class beast1
@@ -18,4 +11,19 @@ class CfgSounds
           sound[] = {"\sound\beast1.ogg", 1, 0.75};
           titles[] = {   };
     };
+
+    class twig1
+    {
+          name = "Twig Snapping";
+          sound[] = {"\sound\twig1.ogg", 1, 1.0};
+          titles[] = {   };
+    };
+
+    class crickets1
+    {
+          name = "Crickets at Evening";
+          sound[] = {"\sound\crickets1.ogg", 1, 1.0};
+          titles[] = {   };
+    };
+
 };

@@ -1,65 +1,57 @@
 /*
   File: taskPatrol.sqf
   Author: Joris-Jan van 't Land
-
+  Fixed by: Dingus
   Description:
-  Create a random patrol of several waypoints around a given position.
+  Create a random patrol of several waypoints based on a set of marker names
 
   Parameter(s):
   _this select 0: the group to which to assign the waypoints (Group)
-  _this select 1: the position on which to base the patrol (Array)
-  _this select 2: the maximum distance between waypoints (Number)
-  _this select 3: (optional) blacklist of areas (Array)
-  
+  _this select 1: the position of the group to start with
+ 
   Returns:
   Boolean - success flag
 */
 
 //Validate parameter count
-if ((count _this) < 3) exitWith {debugLog "Log: [taskPatrol] Function requires at least 3 parameters!"; false};
+if ((count _this) < 2) exitWith {debugLog "Log: [taskPatrolRevised] Function requires at least 2 parameters!"; false};
 
-private ["_grp", "_pos", "_maxDist", "_blacklist"];
+private ["_grp", "_pos", "_markers", "_limit", "_start"];
 _grp = _this select 0;
 _pos = _this select 1;
-_maxDist = _this select 2;
-
-_blacklist = [];
-if ((count _this) > 3) then {_blacklist = _this select 3};
+_limit = 10;
+_start = count waypoints _grp;
 
 //Validate parameters
 if ((typeName _grp) != (typeName grpNull)) exitWith {debugLog "Log: [taskPatrol] Group (0) must be a Group!"; false};
-if ((typeName _pos) != (typeName [])) exitWith {debugLog "Log: [taskPatrol] Position (1) must be an Array!"; false};
-if ((typeName _maxDist) != (typeName 0)) exitWith {debugLog "Log: [taskPatrol] Maximum distance (2) must be a Number!"; false};
-if ((typeName _blacklist) != (typeName [])) exitWith {debugLog "Log: [taskPatrol] Blacklist (3) must be an Array!"; false};
 
 //Dingus
 _grp setBehaviour "SAFE";
 
-//Create a string of randomly placed waypoints.
-private ["_prevPos"];
-_prevPos = _pos;
-for "_i" from 0 to (2 + (floor (random 300))) do
+_markers = ["markerRoute01", "markerRoute02", "markerRoute03"];
+
+//Pick random markers to go to
+for "_i" from _start to _limit do
 {
   private ["_wp", "_newPos"];
-  _newPos = [_prevPos, 50, _maxDist, 1, 0, 60 * (pi / 180), 0, _blacklist] execVM "findSafePosRevised.sqf";
-  _prevPos = _newPos;
-
-  _wp = _grp addWaypoint [_newPos, 0];
+  _newPos = getMarkerPos (_markers select floor random count _markers);
+  //player globalChat format ["%1", _newPos];
+  _wp = _grp addWaypoint [_newPos, _i];
   _wp setWaypointType "MOVE";
-  _wp setWaypointCompletionRadius 20;
+  _wp setWaypointCompletionRadius 5;
 
   //Set the group's speed and formation at the first waypoint.
   if (_i == 0) then
   {
-    _wp setWaypointSpeed "LIMITED";
-    _wp setWaypointFormation "STAG COLUMN";
+    //_wp setWaypointSpeed "LIMITED";
+    //_wp setWaypointFormation "STAG COLUMN";
   };
 };
 
 //Cycle back to the first position.
 private ["_wp"];
-_wp = _grp addWaypoint [_pos, 0];
+_wp = _grp addWaypoint [_pos, _limit + 1];
 _wp setWaypointType "CYCLE";
-_wp setWaypointCompletionRadius 20;
+_wp setWaypointCompletionRadius 5;
 
 true;
