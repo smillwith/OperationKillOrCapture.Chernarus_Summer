@@ -1,9 +1,20 @@
 dingus_fnc_createDiary = {
   params ["_unit"];
 
-  //hint format ["%1", _unit];
-
   //Briefing
+  
+  _subjectHelp = _unit createDiarySubject ["subhelp", "Help"];;
+  _titleHelpOverview = "Overview";
+  _helpOverview = _unit createDiaryRecord ["subhelp", [_titleHelpOverview, "This is where you'll learn how to do things.<br/><br/>
+    Getting Around<br/><br/>
+    Looting<br/><br/>
+    Locating the Creature<br/><br/>
+    Sleeping<br/><br/>
+    Weapon management<br/><br/>
+    Deploying your bedroll<br/><br/>
+    Deploying your tent<br/><br/>
+  "]];
+
   _subjectBriefing = "Diary";
   _titleSituation = "Situation";
   _titleMission = "Mission";
@@ -53,7 +64,7 @@ dingus_fnc_createDiary = {
     <br/><br/>
     Though Gimlin says he doubted the existence of Sasquatch-like creatures, he agreed to Patterson's insistence that they should not attempt to shoot one.
 
-    <img image=""Patterson–Gimlin_film_frame_352001f.jpg"" width=""238"" height=""267"" />
+    <img image=""Patterson_Gimlin_film_frame_352001f.jpg"" width=""238"" height=""267"" />
 
     As their stories went, in the early afternoon of Friday, October 20, Patterson and Gimlin were riding generally northeast (upstream) on horseback along the east bank of Bluff Creek. At sometime between 1:15 and 1:40 PM
     they ""came to an overturned tree with a large root system at a turn in the creek, almost as high as a room."" When they rounded it, ""there was a logjam — a 'crow's nest' — left over from the flood of '64,"" and then

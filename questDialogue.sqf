@@ -1,5 +1,16 @@
 //Quest Dialogue functions
 
+dingus_fnc_interview0 = {
+  guide globalChat "Hello, I am Johan, a local guide. I will be assisting you on your visit. I suggest you start by interviewing the local witnesses.";
+  missionNamespace setVariable ["interview0", '1'];
+};
+
+dingus_fnc_interview8 = {
+  guide globalChat "OK that's great. I think we should make our way into the forest and set up base camp before night fal. Let's go.";
+  missionNamespace setVariable ["interview8", '1'];
+};
+
+
 //---------------------------
 //Hunting Shack
 dingus_fnc_interview1 = {
@@ -94,15 +105,14 @@ dingus_fnc_interview7 = {
 //hunter1 addAction ["Interview", "[] call dingus_fnc_interview7", [], 1.5, true, true, "", "missionNamespace getVariable [""interview7"", false]"];
 //---------------------------
 
-/*
-Not sure why these conditions aren't working
-*/
-       civ0 addAction ["Interview", "[] call dingus_fnc_interview1", [], 1.5, true, true, "", "missionNamespace getVariable ['interview1', '0'] == '0';"];
-       civ1 addAction ["Interview", "[] call dingus_fnc_interview2", [], 1.5, true, true, "", "missionNamespace getVariable ['interview2', '0'] == '0';"];
-       civ2 addAction ["Interview", "[] call dingus_fnc_interview3", [], 1.5, true, true, "", "missionNamespace getVariable ['interview3', '0'] == '0';"];
-       civ3 addAction ["Interview", "[] call dingus_fnc_interview4", [], 1.5, true, true, "", "missionNamespace getVariable ['interview4', '0'] == '0';"];
-journalist1 addAction ["Interview", "[] call dingus_fnc_interview5", [], 1.5, true, true, "", "missionNamespace getVariable ['interview5', '0'] == '0';"];
-      guide addAction ["Interview", "[] call dingus_fnc_interview6", [], 1.5, true, true, "", "missionNamespace getVariable ['interview6', '0'] == '0';"];
-    hunter1 addAction ["Interview", "[] call dingus_fnc_interview7", [], 1.5, true, true, "", "missionNamespace getVariable ['interview7', '0'] == '0';"];
+       civ0 addAction ["Interview witness", "[] call dingus_fnc_interview1", [], 1.5, true, true, "", "missionNamespace getVariable ['interview0', '0'] == '1' && missionNamespace getVariable ['interview1', '0'] == '0';"];
+       civ1 addAction ["Interview witness", "[] call dingus_fnc_interview2", [], 1.5, true, true, "", "missionNamespace getVariable ['interview1', '0'] == '1' && missionNamespace getVariable ['interview2', '0'] == '0';"];
+       civ2 addAction ["Interview witness", "[] call dingus_fnc_interview3", [], 1.5, true, true, "", "missionNamespace getVariable ['interview2', '0'] == '1' && missionNamespace getVariable ['interview3', '0'] == '0';"];
+       civ3 addAction ["Interview witness", "[] call dingus_fnc_interview4", [], 1.5, true, true, "", "missionNamespace getVariable ['interview3', '0'] == '1' && missionNamespace getVariable ['interview4', '0'] == '0';"];
+journalist1 addAction ["Are you investigating the creature too?", "[] call dingus_fnc_interview5", [], 1.5, true, true, "", "missionNamespace getVariable ['interview5', '0'] == '0';"];  //Journalist interview5
+    hunter1 addAction ["What do you know about the creature?", "[] call dingus_fnc_interview7", [], 1.5, true, true, "", "missionNamespace getVariable ['interview7', '0'] == '0';"];  //Hunter interview7
+
+      guide addAction ["Are you Johan my contact?", "[] call dingus_fnc_interview0", [], 1.5, true, true, "", "missionNamespace getVariable ['interview0', '0'] == '0';"];
+      guide addAction ["I'm done interviewing the witnesses.", "[] call dingus_fnc_interview8", [], 1.5, true, true, "", "missionNamespace getVariable ['interview6', '0'] == '1';"];
 
 

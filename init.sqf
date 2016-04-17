@@ -19,6 +19,7 @@ execVM "questDialogue.sqf";
 execVM "endGame.sqf";
 
 //Defaults?
+missionNamespace setVariable ["interview0", '0'];
 missionNamespace setVariable ["interview1", '0'];
 missionNamespace setVariable ["interview2", '0'];
 missionNamespace setVariable ["interview3", '0'];
@@ -26,10 +27,11 @@ missionNamespace setVariable ["interview4", '0'];
 missionNamespace setVariable ["interview5", '0'];
 missionNamespace setVariable ["interview6", '0'];
 missionNamespace setVariable ["interview7", '0'];
+missionNamespace setVariable ["interview8", '0'];
 missionNamespace setVariable ["campEmpty", '1'];
 missionNamespace setVariable ["arrivedAtCamp", '0'];
 missionNamespace setVariable ["campready", '0'];
-
+missionNamespace setVariable ["reachedHuntingStand1", '0'];
 
 
 //Other Quest-related stuff
