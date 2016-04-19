@@ -43,6 +43,9 @@ player0 addAction ["Set up Camp", {
 }, [], 1.5, false, true, "", "triggerActivated tArrivedAtCamp && (missionNamespace getVariable ['campready', '0'] == '0')"];
 
 
+//player0 addAction ["Deploy sleeping bag", {_bag = createVehicle B_respawn_sleeping_bag_brown_f; _bag addAction []; }, [], 1.5, false, true, "", ""];
+player0 addAction ["Unpack sleeping bag", "sleepingBag.sqf", nil, 6, false, true, "", "_this == _target AND 'sc_bedroll' in (items _this)"];
+
 //Action: Medic!!
 medic1 addAction ["Heal me please.", {
   _this select 0 action ["HealSoldier", _this select 1];
@@ -58,4 +61,3 @@ MAC_fnc_switchMove = {
   _object switchMove _anim;
     
 };
-

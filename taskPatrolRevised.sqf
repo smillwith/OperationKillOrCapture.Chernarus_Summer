@@ -28,7 +28,7 @@ if ((typeName _grp) != (typeName grpNull)) exitWith {debugLog "Log: [taskPatrol]
 //Dingus
 _grp setBehaviour "SAFE";
 
-_markers = ["markerRoute01", "markerRoute02", "markerRoute03", "markerRoute04", "markerRoute05", "markerRoute06", "markerRoute07"];
+_markers = ["markerRoute01", "markerRoute02", "markerRoute03", "markerRoute04", "markerRoute05", "markerRoute06", "markerRoute07", "markerRoute08"];
 
 //Pick random markers to go to
 for "_i" from _start to _limit do
