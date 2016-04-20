@@ -1,3 +1,7 @@
+//Set variable for Mission Root
+//Src: http://killzonekid.com/arma-scripting-tutorials-mission-root/
+__EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
+
 class CfgSounds
 {
     sounds[] =
