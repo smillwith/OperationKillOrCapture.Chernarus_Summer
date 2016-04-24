@@ -1,11 +1,12 @@
 dingus_fnc_FillLoot = {
-  _eliteItems = ["NVGoggles_indep", "optic_TWS", "optic_Nightstalker", "Rangefinder", "srifle_DMR_06_olive_F", "arifle_MXM_F", "hgun_ACPC2_F", "hgun_Pistol_heavy_01_F", "SMG_02_F"];
-  _rareItems = ["ItemGPS", "optic_DMS", "muzzle_snds_B", "bipod_01_F_blk", "optic_SOS"];
-  _clothingItems = ["U_B_CombatUniform_mcam", "H_Cap_grn_BI", "H_MilCap_mcamo", "V_BandollierB_khk", "V_TacVest_brn", "V_TacVestIR_blk"];
+  //Old: "NVGoggles_indep", "optic_TWS", "optic_Nightstalker", "Rangefinder", "ItemGPS", 
+  _eliteItems = ["srifle_DMR_06_olive_F", "arifle_MXM_F", "hgun_ACPC2_F", "hgun_Pistol_heavy_01_F", "SMG_02_F"];
+  _rareItems = ["optic_DMS", "muzzle_snds_B", "bipod_01_F_blk", "optic_SOS"];
+  _clothingItems = ["U_B_CombatUniform_mcam", "U_BG_Guerilla2_1", "U_BG_Guerilla2_2", "U_BG_Guerilla2_3", "U_BG_Guerilla3_1", "U_BG_Guerilla3_2", "V_BandollierB_rgr", "V_PlateCarrier1_blk", "H_Cap_grn_BI", "H_MilCap_mcamo", "V_BandollierB_khk", "H_Booniehat_grn", "H_Cap_blk", "H_Cap_grn_BI", "V_TacVest_blk", "V_TacVest_brn", "V_TacVestIR_blk"];
   _magazines = ["30Rnd_9x21_Mag", "9Rnd_45ACP_Mag", "20Rnd_762x51_Mag", "11Rnd_45ACP_Mag", "30Rnd_65x39_caseless_mag"];
   _commonItems = ["ItemWatch", "ItemWatch", "ItemWatch", "ItemWatch", "ItemCompass", "ItemCompass", "ItemCompass", "ItemCompass", "optic_MRD", "acc_flashlight", "acc_flashlight", "acc_flashlight", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "Binocular", "Chemlight_Blue", "Chemlight_Green", "Chemlight_Red"];
 
-  //TODO: Add hats, vests, backpacks
+  //TODO: Add hats, vests, backpacks?
 
   //Get boxes
   params ["_boxes"];
@@ -60,7 +61,7 @@ dingus_fnc_FillLoot = {
 
   } forEach _boxes;
 
-  //Distribute the rare items
+  //Distribute the elite items
   {
     //pick a box
     _box = _boxes select floor random count _boxes;

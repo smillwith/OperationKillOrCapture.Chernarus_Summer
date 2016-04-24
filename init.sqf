@@ -47,6 +47,7 @@ medic1 addAction ["I'm hurt. Patch me up, doc.", {
   _this select 0 action ["HealSoldier", _this select 1];
 }, [], 1.5, false, true, "", "damage _this > 0.0"];
 
+//Repair my vehicle?
 
 //Sit Init
 MAC_fnc_switchMove = {
