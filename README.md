@@ -11,12 +11,20 @@ Sounds: http://www.soundsnap.com/search/audio/growl/score
 
 ----
 
-Features
+Features:
 
-* A creature roaming the woods
+* A real creature roaming the woods
 * Sleep system
 * Sit in chairs
+* Optional companion
 * Simple loot system
-*    * Collect additional weapons, ammo, magazines
+*     * Collect additional weapons, ammo, magazines
 * Unholster your weapon at any time
 * Radio broadcasts (soon)
+
+To do:
+
+* Found journal entries
+* Sounds (ambient, other)
+* Endgame
+* Forest population
