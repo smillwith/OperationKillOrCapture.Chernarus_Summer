@@ -6,20 +6,41 @@ class CfgSounds
 {
     sounds[] =
     {
-      beast1, twig1, crickets1
+      beastsnarl, beastgrowl, beastgrowllong, beastgrowlshort, knocking1, crickets1
     };
 
-    class beast1
+    class beastsnarl
     {
-          name = "Beast Noise 1";
-          sound[] = {"\sound\beast1.ogg", 1, 0.75};
+          name = "Beast Snarl";
+          sound[] = {"\sound\beast2.ogg", 1, 1};
           titles[] = {   };
     };
 
-    class twig1
+    class beastgrowl
     {
-          name = "Twig Snapping";
-          sound[] = {"\sound\twig1.ogg", 1, 1.0};
+          name = "Beast Growl";
+          sound[] = {"\sound\beast1.ogg", 1, 1};
+          titles[] = {   };
+    };
+
+    class beastgrowllong
+    {
+          name = "Beast Growl Long";
+          sound[] = {"\sound\beast3.ogg", 1, 1};
+          titles[] = {   };
+    };
+
+    class beastgrowlshort
+    {
+          name = "Beast Growl short";
+          sound[] = {"\sound\beast4.ogg", 1, 1};
+          titles[] = {   };
+    };
+
+    class knocking1
+    {
+          name = "Wood knocking triple";
+          sound[] = {"\sound\knocking.ogg", 1, 1.0};
           titles[] = {   };
     };
 

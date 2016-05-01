@@ -18,7 +18,7 @@ Features:
 * Sit in chairs
 * Optional companion
 * Simple loot system
-*     * Collect additional weapons, ammo, magazines
+    * Collect additional weapons, ammo, magazines
 * Unholster your weapon at any time
 * Radio broadcasts (soon)
 
@@ -28,3 +28,8 @@ To do:
 * Sounds (ambient, other)
 * Endgame
 * Forest population
+
+
+------
+
+

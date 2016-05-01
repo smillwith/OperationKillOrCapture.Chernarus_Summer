@@ -52,6 +52,21 @@ player0 addAction ["<t color='#FEB100'>Set up Camp</t>", {
 //Doesn't work since you don't have that item
 //player0 addAction ["Unpack sleeping bag", "sleepingBag.sqf", nil, 6, false, true, "", "_this == _target AND 'sc_bedroll' in (items _this)"];
 
+
+//offroad1 setVariable ["domeLightOn", '0', '0'];
+player0 addAction ["Dome Light Off", {
+  deleteVehicle domelight;
+  offroad1 setVariable ["rearLightOn", '0'];
+},[],1.5,false,true,"","_target getVariable ['rearLightOn', '0'] == '1' AND Alive(_target) AND driver _target == _this"];
+
+player0 addAction ["Dome Light On", {
+  deleteVehicle domelight;  domelight = "#lightpoint" createVehicleLocal getPos offroad1;  domelight attachTo [offroad1, [0, 0.1, 0.7]];
+  domelight setLightBrightness 0.05;  domelight setLightAmbient [1, 0.9, 0.8];  domelight setLightColor [1, 0.9, 0.8]; domelight setLightFlareMaxDistance 300;
+  offroad1 setVariable ["domeLightOn", '1'];
+},
+[], 1.5, false, true, "", "_target getVariable ['domeLightOn', '0'] == '0' AND Alive(_target) AND driver _target == _this"];
+
+
 //Action: Medic!!
 medic1 addAction ["<t color='#F00000'>I'm hurt. Patch me up, doc.</t>", {
   _this select 0 action ["HealSoldier", _this select 1];
