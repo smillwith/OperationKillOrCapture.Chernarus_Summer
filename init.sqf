@@ -32,8 +32,11 @@ missionNamespace setVariable ["daymode", '0'];
 missionNamespace setVariable ["johanCompanion", '0'];
 missionNamespace setVariable ["creatureLocated", '1'];
 
+offroad1 setVariable ['domeLightOn', '0'];
+
 //Other Quest-related stuff
 
+//Initialize the truck
 [ 
  offroad1, 
  ["guerilla_05",1],  
@@ -54,18 +57,20 @@ player0 addAction ["<t color='#FEB100'>Set up Camp</t>", {
 
 
 //offroad1 setVariable ["domeLightOn", '0', '0'];
-player0 addAction ["Dome Light Off", {
+offroad1 addAction ["Domelight Off", {
   deleteVehicle domelight;
-  offroad1 setVariable ["rearLightOn", '0'];
-},[],1.5,false,true,"","_target getVariable ['rearLightOn', '0'] == '1' AND Alive(_target) AND driver _target == _this"];
+  offroad1 setVariable ["domeLightOn", '0'];
+}, [], 1.5, false, true, "", "(_target getVariable ['domeLightOn', '0'] == '1') && (alive(_target)) && (driver _target == _this) && (vehicle _this == _target)"];
 
-player0 addAction ["Dome Light On", {
-  deleteVehicle domelight;  domelight = "#lightpoint" createVehicleLocal getPos offroad1;  domelight attachTo [offroad1, [0, 0.1, 0.7]];
-  domelight setLightBrightness 0.05;  domelight setLightAmbient [1, 0.9, 0.8];  domelight setLightColor [1, 0.9, 0.8]; domelight setLightFlareMaxDistance 300;
-  offroad1 setVariable ["domeLightOn", '1'];
-},
-[], 1.5, false, true, "", "_target getVariable ['domeLightOn', '0'] == '0' AND Alive(_target) AND driver _target == _this"];
+offroad1 addAction ["Domelight On", {
+  domelight = "#lightpoint" createVehicleLocal getPos offroad1; domelight attachTo [offroad1, [0, 0.1, 0.7]];
+  domelight setLightBrightness 0.05; domelight setLightAmbient [1, 0.9, 0.8]; domelight setLightColor [1, 0.9, 0.8]; domelight setLightFlareMaxDistance 300;
+  offroad1 setVariable ['domeLightOn', '1'];
+}, [], 1.5, false, true, "", "(_target getVariable ['domeLightOn', '0'] == '0') && (driver _target == _this) && (vehicle _this == _target)"];
 
+
+//_target getVariable ['domeLightOn', '0'] == '0' AND alive(_target) AND driver _target == _this AND vehicle _this == _target
+//offroad1 getVariable ['domeLightOn', '0'] == '0' AND alive(offroad1) AND driver offroad1 == player AND vehicle player == offroad1
 
 //Action: Medic!!
 medic1 addAction ["<t color='#F00000'>I'm hurt. Patch me up, doc.</t>", {

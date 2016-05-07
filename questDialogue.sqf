@@ -10,6 +10,11 @@ dingus_fnc_interview8 = {
   missionNamespace setVariable ["interview8", '1'];
 };
 
+dingus_fnc_interview8b = {
+  guide globalChat "OK that's fine. I think we should make our way into the forest and set up base camp before dark. Follow me. Let's go.";
+  missionNamespace setVariable ["interview8", '1'];
+};
+
 dingus_fnc_interview9 = {
   guide globalChat "I'd get started by visiting some of the sights highlighted on your map. Once you've done that, I think you might have a better understanding of what you're after.";
   missionNamespace setVariable ["interview9", '1'];
@@ -146,6 +151,7 @@ journalist1 addAction ["Are you investigating the creature too?", "[] call dingu
     hunter1 addAction ["What do you know about the creature?", "[] call dingus_fnc_interview7", [], 1.5, true, true, "", "missionNamespace getVariable ['interview7', '0'] == '0';"];  //Hunter interview7
 
       guide addAction ["<t color='#FEB100'>Are you Johan my contact?</t>", "[] call dingus_fnc_interview0", [], 1.5, true, true, "", "missionNamespace getVariable ['interview0', '0'] == '0';"];
+      guide addAction ["<t color='#FEB100'>I want to interview the witnesses later.</t>", "[] call dingus_fnc_interview8b", [], 1.5, true, true, "", "missionNamespace getVariable ['interview0', '1'] == '1' && missionNamespace getVariable ['interview6', '0'] == '0' && missionNamespace getVariable ['interview8', '0'] == '0';"];
       guide addAction ["<t color='#FEB100'>I'm done interviewing the witnesses.</t>", "[] call dingus_fnc_interview8", [], 1.5, true, true, "", "missionNamespace getVariable ['interview6', '0'] == '1' && missionNamespace getVariable ['interview8', '0'] == '0';"];
       guide addAction ["<t color='#FEB100'>What do I do now?</t>", "[] call dingus_fnc_interview9", [], 1.5, true, true, "", "missionNamespace getVariable ['campready', '0'] == '1' && missionNamespace getVariable ['interview9', '0'] == '0';"];
       guide addAction ["<t color='#FFFFFF'>Do you want to come with me?</t>", "[] call dingus_fnc_johanCompanion", [], 1.5, true, true, "", "missionNamespace getVariable ['johanCompanion', '0'] == '0' && missionNamespace getVariable ['interview9', '0'] == '1';"];
