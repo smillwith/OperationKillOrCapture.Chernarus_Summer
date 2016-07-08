@@ -36,7 +36,7 @@ _this addAction ["Hide handgun*", {_unit = _this select 1; _unit action ["Switch
 // When I'm not in a vehicle (I'm my own vehicle)
 // When I have no weapon equipped
 // But I do have a weapon on me
-_weaponAction = "Primary weapon*";
-_this addAction [_weaponAction, {_unit = _this select 1; _unit selectWeapon primaryWeapon _unit;}, [], 1.5, false, true, "", "_this == _target && vehicle _target == _target && currentWeapon _target == """" && primaryWeapon _target != """""];
+//_weaponAction = "Primary weapon*";
+//_this addAction [_weaponAction, {_unit = _this select 1; _unit selectWeapon primaryWeapon _unit;}, [], 1.5, false, true, "", "_this == _target && vehicle _target == _target && currentWeapon _target == """" && primaryWeapon _target != """""];
 
 true;
